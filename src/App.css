@@ -1,0 +1,245 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+body{
+color: #162d4a !important;
+}
+
+.fs-16{
+  font-size: 16px !important;
+}
+
+.fs-18{
+  font-size: 18px !important;
+}
+
+.fs-20{
+  font-size: 20px !important;
+}
+
+.fs-24{
+  font-size: 24px !important;
+}
+
+.fs-28{
+  font-size: 28px !important;
+}
+
+.fs-38{
+  font-size: 38px !important;
+}
+
+.fs-40{
+  font-size: 40px !important;
+}
+
+.fs-50{
+  font-size: 50px !important;
+}
+
+.fw-200{
+  font-weight: 200 !important;
+}
+
+.fw-300{
+  font-weight: 300 !important;
+}
+
+.fw-400{
+  font-weight: 400 !important;
+}
+
+.fw-500{
+  font-weight: 500 !important;
+}
+
+.fw-600{
+  font-weight: 600 !important;
+}
+
+.fw-700{
+  font-weight: 700 !important;
+}
+
+.fw-bold{
+  font-weight: 900 !important;
+}
+
+.fw-semiBold{
+  font-weight: 800 !important;
+}
+
+.Cooper{
+  font-family: 'Cooper Lt BT', sans-serif !important; 
+}
+
+.Oswald{
+  font-family: 'Oswald', sans-serif !important;
+}
+
+.Quicksand{
+  font-family: 'Quicksand', sans-serif
+}
+
+.headerWrapper{
+  background-color:rgba(178,211,226);
+  text-align: center;
+  width: 100%;
+  padding-top: 32px;
+  height: 710px;
+
+}
+
+.contentHeading{
+  text-transform: uppercase;
+  max-width: 100%;
+}
+
+.contentwrapper{
+  text-align: start;
+ width: 40%;
+}
+
+.logo{
+  height: 45px;
+}
+
+.contentPara{
+  line-height: 66px;
+  padding-left: 100px;
+}
+
+.headerPara{
+  padding-left: 100px;
+
+}
+
+.headerBtn{
+  padding-left: 100px;
+  text-align: start;
+}
+
+.bunleBtn{
+  background-color: rgba(22,45,74);
+  margin-left: 100px;
+  box-shadow: 8px 6px 0 0 #fff;
+  position: relative;
+  color: #fff;
+  height: 66px;
+  border: none;
+  width: 256px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-transform: capitalize;
+  margin-bottom: 25px !important;
+}
+
+.productDetailWrapper{
+  background-color: #f9ece4;
+  text-align: center;
+  padding-top: 5rem;
+  height: 1000px;
+  padding: 80px;
+}
+
+.detailPrice{
+  text-decoration: line-through;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.productContainer{
+  justify-content: space-between;
+    display: flex;
+     margin-top: 70px;
+    margin-right: 250px;
+    margin-left: 159px; 
+}
+
+
+.productImage{
+  border: 5px solid;
+    margin-bottom: 1.25rem;
+    margin-left: 29px;
+}
+
+
+.productBtnContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productButton{
+  background-color: rgba(22, 45, 74);
+  box-shadow: 8px 6px 0 0 #fff;
+  position: relative;
+  color: #fff;
+  height: 66px;
+  border: none;
+  width: 332px;
+  padding: 1.25rem 5rem; /* Combine padding properties into one */
+  text-transform: capitalize;
+  margin-bottom: 25px !important;
+}
+
+.checkoutContainer{
+  background-image: url(./assets/backgroundimage/checkout_bg.jpg);
+  color: #fff;
+  text-align: center;
+  padding-top: 40px;
+  background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.checkoutWrapper{
+  margin: 80px;
+}
+
+.checkoutHeading{
+  
+}
