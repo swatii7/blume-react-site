@@ -43,7 +43,7 @@ function Checkout() {
     <Container>
       <Row>
         <Col>
-        <CustomInput lg= {6} sm= {6} xs= {6} type= 'text' name= 'First Name' placeholder= 'First Name' />
+        <CustomInput lg= {6} sm= {6} xs= {6} type='text' name='First Name' placeholder='First Name' />
         </Col>
         <Col>
         <CustomInput lg= {6} sm= {6} xs= {6} placeholder= 'Last Name' />

@@ -3,9 +3,13 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
 function CustomInput(props) {
-
+  console.log(props,'dsadahiaus')
     const {label, type, placeholder, name, value, onchange } = props
-
+    const inputStyle = {
+      '::placeholder': {
+        color: 'gray', // Default to gray if no color is provided
+      },
+    };
     return (
 
         <FloatingLabel
@@ -14,11 +18,16 @@ function CustomInput(props) {
         className="mb-3"
       >
         <Form.Control 
+        style={inputStyle}
          name={name}
           type={type}
           placeholder={placeholder}
+          placeholderColor="blue" // Change this to your desired color
+
           value={value}
-          onChange={onchange} />
+          onChange={onchange}
+          
+          />
       </FloatingLabel>
     )
 }

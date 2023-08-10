@@ -397,3 +397,7 @@ background-color: rgba(178,211,226);
     font-size: 17px;
     padding-top: 1px;
 }
+
+input.form-control::placeholder{
+  color : #162d4a !important; 
+}
