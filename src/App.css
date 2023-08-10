@@ -44,6 +44,9 @@
 body{
 color: #162d4a !important;
 }
+.fs-14{
+  font-size: 14px !important;
+}
 
 .fs-16{
   font-size: 16px !important;
@@ -121,12 +124,20 @@ color: #162d4a !important;
   font-family: 'Quicksand', sans-serif
 }
 
+.mt-50{
+  margin-top: 50px !important;
+}
+
+.pt-50{
+padding-top: 50px !important;
+}
+
 .headerWrapper{
   background-color:rgba(178,211,226);
   text-align: center;
   width: 100%;
   padding-top: 32px;
-  height: 710px;
+  height: 750px;
 
 }
 
@@ -137,7 +148,7 @@ color: #162d4a !important;
 
 .contentwrapper{
   text-align: start;
- width: 40%;
+  padding-top: 108px;
 }
 
 .logo{
@@ -146,22 +157,22 @@ color: #162d4a !important;
 
 .contentPara{
   line-height: 66px;
-  padding-left: 100px;
+  padding-left: 35px;
+  width: 579px;
 }
 
 .headerPara{
-  padding-left: 100px;
-
+  padding-left: 35px;
+width: 576px;
 }
 
 .headerBtn{
-  padding-left: 100px;
+  padding-left: 35px !important;
   text-align: start;
 }
 
 .bunleBtn{
   background-color: rgba(22,45,74);
-  margin-left: 100px;
   box-shadow: 8px 6px 0 0 #fff;
   position: relative;
   color: #fff;
@@ -174,6 +185,11 @@ color: #162d4a !important;
   padding-right: 5rem;
   text-transform: capitalize;
   margin-bottom: 25px !important;
+}
+
+.headerImgWrapper{
+  max-width: 100%;
+    height: auto;
 }
 
 .productDetailWrapper{
@@ -225,21 +241,159 @@ color: #162d4a !important;
   margin-bottom: 25px !important;
 }
 
+.reviewContainer{
+padding: 80px;
+background-color: rgba(178,211,226);
+ color: #162d4a;
+ /* max-width: 1280px; */
+    text-align: center;
+}
+
+
+.reviewWrapper{
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 1300px;
+  margin-left: 184.5px;
+  display: flex;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.caroselPara{
+  text-align: initial;
+    padding-right: 17px;
+    margin-left: 36px;
+}
+
+.breakerWrapper{
+  text-align: justify;
+  margin-left: 39px;
+  margin-bottom: 0.25rem;
+  margin-top: 2rem;
+}
+
+.reviewNamer{
+  text-align: initial;
+    margin-left: 40px;
+}
+
+.carouselImgWrapper{
+  max-width: 100%;
+}
+
+.currentCarouselImage{
+  height: 435px;
+    width: 435px;
+    border: 5px solid #162d4a;
+}
+
+.carouselSecondImg{
+  height: 435px;
+    width: 435px;
+    border: 5px solid #162d4a;
+    opacity: 0.5;
+}
+
 .checkoutContainer{
-  background-image: url(./assets/backgroundimage/checkout_bg.jpg);
+  background-image: url(./assets/Checkout/checkout_bg.jpg);
   color: #fff;
   text-align: center;
-  padding-top: 40px;
+  padding: 40px 182px;
   background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: auto;
 }
 
 .checkoutWrapper{
-  margin: 80px;
+  margin: 59px;
 }
 
-.checkoutHeading{
-  
+.formHeader{
+  display: flex;
+    flex-direction: row;
+    padding-top: 19px;
+}
+
+
+.footerContainer{
+  background-color: #162d4a;
+  color: #fff;
+  text-align: center;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.mb-10{
+  margin-bottom: 10px !important; 
+}
+
+.mb-20{
+  margin-bottom: 20px !important; 
+}
+
+.mb-40{
+  margin-bottom: 40px !important; 
+}
+
+.regionDropdown{
+  height: 58px;
+  margin-left: 10px;
+  border-radius: 7px;
+  width: 213px;
+}
+
+.countryDropdown{
+  height: 58px;
+  margin-left: 10px;
+  border-radius: 7px;
+  width: 270px;
+}
+
+.checkoutPatch{
+  height: 27px;
+    margin-top: 27px
+}
+
+.discountBtn{
+  background-color: rgba(22,45,74);
+  box-shadow: 8px 6px 0 0 #fff;
+  position: relative;
+  color: #fff;
+  height: 54px;
+  border: none;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-right: 5rem;
+  text-transform: capitalize;
+  margin-bottom: 25px !important;
+  margin-left: 20px;
+  width: 150px;
+  padding-left: 53px;
+  opacity: 0.5;
+}
+
+.discInput{
+  width: 330px;
+}
+
+.cartTable{
+  background-color: #162d4a;
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 565px;
+  margin-left: -26px;
+  margin-top: 50px;
+}
+
+.CardTableContent{
+  word-spacing: 0.2rem;
+    font-size: 17px;
+    padding-top: 1px;
 }

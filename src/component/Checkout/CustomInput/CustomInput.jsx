@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 function CustomInput(props) {
 
-    const {label, type, placeholder} = props
+    const {label, type, placeholder, name, value, onchange } = props
 
     return (
 
@@ -13,7 +13,12 @@ function CustomInput(props) {
         label={label}
         className="mb-3"
       >
-        <Form.Control type={type} placeholder={placeholder} />
+        <Form.Control 
+         name={name}
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onchange} />
       </FloatingLabel>
     )
 }

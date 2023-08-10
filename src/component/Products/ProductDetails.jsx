@@ -4,6 +4,8 @@ import cloud9Img from '../../assets/ProductDetailImages/cloud9.png'
 import airhugImg from '../../assets/ProductDetailImages/airHug.png'
 import CustomButton from '../CustomButton/CustomButton';
 import Checkout from '../Checkout/Checkout';
+import ProductReview from '../Products/ProductReview';
+import Footer from '../Footer/Footer';
 
 function ProductDetails({forwardRef}) {
 
@@ -49,7 +51,9 @@ function ProductDetails({forwardRef}) {
         <CustomButton label= 'Take me 2 Checkout!' className='productButton Quicksand fw-700 mb-5' />
     </div>
         </div>
+        <ProductReview />
         <Checkout />
+        <Footer/>
         </>
     )
 }
