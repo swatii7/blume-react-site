@@ -151,14 +151,12 @@ padding-top: 50px !important;
   padding-top: 108px;
 }
 
-.logo{
-  height: 45px;
-}
 
 .contentPara{
   line-height: 66px;
   padding-left: 35px;
   width: 579px;
+  font-size: 24px;
 }
 
 .headerPara{
@@ -473,4 +471,47 @@ input.form-control::placeholder{
   line-height: 39px;
     padding: 55px 81px;
     letter-spacing: 0.01rem;
+}
+
+/* Header.css */
+
+/* Adjust the logo size */
+.logo {
+  max-width: 100%; /* Ensure the logo doesn't exceed its container */
+  height: auto;
+}
+
+
+@media (min-width: 768px) {
+  /* Medium screens and above */
+  .contentPara {
+    font-size: 30px;
+  }
+}
+
+/* Adjust margins and paddings for smaller screens */
+.textContainer {
+  padding: 10px;
+}
+
+/* Center the button on small screens */
+@media (max-width: 576px) {
+  /* Small screens */
+  .bunleBtn {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* Adjust image padding for different screen sizes */
+.headerImgWrapper img {
+  width: 100%;
+  padding-top: 60px;
+}
+
+@media (min-width: 992px) {
+  /* Large screens and above */
+  .headerImgWrapper img {
+    padding-top: 108px;
+  }
 }
