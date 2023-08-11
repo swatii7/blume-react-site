@@ -25,7 +25,7 @@ function Header() {
         </div>
         <Container>
           <Row>
-            <Col lg={5} md={12} sm={12}>
+            <Col lg={5} md={12} sm={12} xs={12}> {/* Added xs={12} for extra small screens */}
               <div className='mt-5 contentwrapper'>
                 <h3 className='fs-50 fw-500 contentPara Cooper'>
                   Hopping on the PA system to say: welcome back to school!
@@ -43,7 +43,7 @@ function Header() {
                 />
               </div>
             </Col>
-            <Col lg={7} md={12} sm={12}>
+            <Col lg={7} md={12} sm={12} xs={12}> {/* Added xs={12} for extra small screens */}
               <div className='headerImgWrapper'>
                 <img
                   src={headerImg}

@@ -45,7 +45,6 @@ function ProductReview() {
         }
     }
 
-    console.log(currentIndex,'currentIndex')
     
     return (
         <div className='reviewContainer'>

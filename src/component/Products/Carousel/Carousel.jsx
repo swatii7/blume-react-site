@@ -41,7 +41,7 @@ function Carousel({data,currentItem}) {
         </Col>
         <Col>
         <div style={{maxWidth: '100%', height: 'auto'}}>
-         <img src= {data.length === currentItem +1 ? data[0].imageSrc  : data[currentItem+1].imageSrc} className='carouselSecondImg' />
+         <img src= {data.length === currentItem +1 ? data[0].imageSrc  : data[currentItem+1].imageSrc} className='carouselSecondImg opacity' />
         </div>
         </Col>
       </Row>

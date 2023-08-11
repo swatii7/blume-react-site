@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import stargirlImg from '../../assets/ProductDetailImages/stargirl.png'
 import cloud9Img from '../../assets/ProductDetailImages/cloud9.png'
 import airhugImg from '../../assets/ProductDetailImages/airHug.png'
@@ -27,6 +27,16 @@ function ProductDetails({forwardRef}) {
         },
       ];
 
+      const targetRef = useRef(null)
+
+      function handleCheckout(){
+        targetRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      
+      }
+
     return (
       <>
         <div ref={forwardRef} className='productDetailWrapper Cooper'>
@@ -48,11 +58,11 @@ function ProductDetails({forwardRef}) {
       ))}
     </div>
     <div className='productBtnContainer'>
-        <CustomButton label= 'Take me 2 Checkout!' className='productButton Quicksand fw-700 mb-5' />
+        <CustomButton label= 'Take me 2 Checkout!' className='productButton Quicksand fw-700 mb-5' onclick={handleCheckout} />
     </div>
         </div>
         <ProductReview />
-        <Checkout />
+        <Checkout forwardRef={targetRef}  />
         <Footer/>
         </>
     )

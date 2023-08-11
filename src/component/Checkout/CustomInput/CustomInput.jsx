@@ -3,7 +3,6 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
 function CustomInput(props) {
-  console.log(props,'dsadahiaus')
     const {label, type, placeholder, name, value, onchange } = props
     const inputStyle = {
       '::placeholder': {
@@ -22,7 +21,7 @@ function CustomInput(props) {
          name={name}
           type={type}
           placeholder={placeholder}
-          placeholderColor="blue" // Change this to your desired color
+          placeholdercolor="blue" // Change this to your desired color
 
           value={value}
           onChange={onchange}
