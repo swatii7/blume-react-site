@@ -515,3 +515,10 @@ input.form-control::placeholder{
     padding-top: 108px;
   }
 }
+
+.disabledButton {
+  /* Add your custom styles for the disabled button here */
+  opacity: 0.6; /* Example: Reduce opacity to indicate disabled state */
+  cursor: not-allowed; /* Example: Change cursor to indicate button is disabled */
+  /* Add more styles as needed */
+}
