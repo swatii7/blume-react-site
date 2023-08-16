@@ -1,5 +1,6 @@
 import React from 'react'
 import footerLogo from '../../assets/Logo/logo-white.svg'
+import SignUpForm from '../Header/SignUp/SignUpForm'
 
 function Footer() {
     return (
@@ -18,6 +19,7 @@ function Footer() {
             Blume is in no way affiliated with Judy Blume
             </p>
             </div>
+            <SignUpForm />
         </div>
     )
 }

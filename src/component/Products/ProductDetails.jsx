@@ -58,7 +58,7 @@ function ProductDetails({forwardRef}) {
       ))}
     </div>
     <div className='productBtnContainer'>
-        <CustomButton label= 'Take me 2 Checkout!' className='productButton Quicksand fw-700 mb-5' onclick={handleCheckout} />
+        <CustomButton label= 'Take me 2 Checkout!' className='productButton Quicksand fw-700 mb-5 mt-5' onclick={handleCheckout} />
     </div>
         </div>
         <ProductReview />

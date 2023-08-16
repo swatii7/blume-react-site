@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import logo from '../../assets/Logo/logo.svg';
 import headerImg from '../../assets/ProductDetailImages/headerProductImage.png';
 import ProductDetails from '../Products/ProductDetails';
@@ -6,9 +6,12 @@ import CustomButton from '../CustomButton/CustomButton';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import SignUpForm from './SignUp/SignUpForm';
 
 function Header() {
   const targetRef = useRef(null);
+
+  const [isSignedUp, setIsSignedUp] = useState(false)
 
   function handleBundleClick() {
     targetRef.current.scrollIntoView({
@@ -17,12 +20,26 @@ function Header() {
     });
   }
 
+  function signUpHandler(){
+    setIsSignedUp(true);
+  }
+
   return (
     <>
       <div className='headerWrapper textCapitalize'>
+        <div className='d-flex navItems'>
         <div className='contentHeading Oswald'>
           <img src={logo} alt='logo' className='logo' />
         </div>
+        <div>
+                   <CustomButton
+          label= 'Sign Up'
+          className='bunleBtn fw-700 mb-5 Quicksand'
+          onClick={signUpHandler}  />
+          
+        </div>
+        </div>
+       
         <Container>
           <Row>
             <Col lg={5} md={12} sm={12} xs={12}> {/* Added xs={12} for extra small screens */}
@@ -38,7 +55,7 @@ function Header() {
               <div>
                 <CustomButton
                   label='shop bundle'
-                  className='bunleBtn fw-700 mb-5 Quicksand'
+                  className='bunleBtn fw-700 mb-5 Quicksand mt-5'
                   onclick={handleBundleClick}
                 />
               </div>
@@ -58,6 +75,7 @@ function Header() {
           </Row>
         </Container>
       </div>
+      
       <ProductDetails forwardRef={targetRef} />
     </>
   );
