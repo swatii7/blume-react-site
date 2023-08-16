@@ -75,7 +75,7 @@ function Header() {
           </Row>
         </Container>
       </div>
-      
+      {isSignedUp === false ? <SignUpForm /> : null}
       <ProductDetails forwardRef={targetRef} />
     </>
   );
