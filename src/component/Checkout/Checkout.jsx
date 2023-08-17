@@ -25,13 +25,11 @@ function Checkout({ forwardRef }) {
     checked: true
 
   })
-
-
-  // console.log(state)
-
   const [isDisabled, setIsDisabled] = useState(true)
   const [email, setEmail] = useState('')
+  const [discount, setDiscount] = useState('')
   const [emailError, setEmailError] = useState('')
+  const [discError, setDiscError] = useState('')
   const [country, setCountry] = useState('');
   const [region, setRegion] = useState('');
 
@@ -47,6 +45,11 @@ function Checkout({ forwardRef }) {
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     return regex.test(input);
   };
+  const validateCode = (input) => {
+    const disc_regex = /^\d{7}([A]|[0-9]){1}\d{3}/;
+    return disc_regex.test(input)
+  };
+
 
   function handleEmailChange(e) {
     const emailInput = e.target.value
@@ -66,6 +69,26 @@ function Checkout({ forwardRef }) {
     }));
   }
 
+  function discountChangeHandler(e) {
+    const discInput = e.target.value
+    setDiscount(discInput)
+    if (validateCode ) {
+      setDiscError('Enter 6 digit code')
+    }
+    else {
+      setDiscError('')
+    }
+  }
+
+  function codeHandler() {
+    
+    if(discount.length === 6){
+      setDiscError('')
+      setDiscount('')
+      enqueueSnackbar('Coupeon applied successfully', {variant: 'success'})
+    }
+  }
+
   function inputHanlder(e, fieldName) {
     setState((prevState) => ({
       ...prevState,
@@ -74,21 +97,33 @@ function Checkout({ forwardRef }) {
     }));
   }
 
+
+
   function buttonHandler() {
-    var visaPattern = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-var mastPattern = /^(?:5[1-5][0-9]{14})$/;
-var amexPattern = /^(?:3[47][0-9]{13})$/;
-var discPattern = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/; 
-    if (
-      // state.card_number !== visaPattern 
-      //  state.card_number !== mastPattern || 
-       state.card_number !== amexPattern 
-        // state.card_number !==discPattern
-        ) {
-      console.log('enter correct')
+    if (state.shipping_address === '' ||
+      state.city_name === '' ||
+      state.zip_code === '' ||
+      state.card_number === ''
+    ) {
+      enqueueSnackbar('All fields are required', { variant: 'error' })
     }
     else {
-      console.log('card number entered')
+      enqueueSnackbar('Order Placed Successfully', { variant: 'success' })
+      setCountry('')
+      setRegion('')
+      setState({
+        first_name: '',
+        last_name: '',
+        email_address: '',
+        mobile_number: '',
+        shipping_address: '',
+        apartment: '',
+        city_name: '',
+        zip_code: '',
+        card_number: '',
+        checked: true,
+        discount: ''
+      })
     }
   }
 
@@ -141,7 +176,7 @@ var discPattern = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
                     placeholder='Email Address'
                     type='text'
                     error={emailError}
-                    value={state.email_address}
+                    value={email}
                     onchange={handleEmailChange} />
                   {emailError && <p className='emailError'>{emailError}</p>}
                   <CustomInput
@@ -222,11 +257,12 @@ var discPattern = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
                     </div>
                   </div>
                   <div className='mb-10'>
-                  <CustomInput
-                        className='mb-3'
-                        lg={12} sm={6} xs={6}
-                        placeholder='Card Number'
-                        onchange={(e) => inputHanlder(e, 'card_number')} />
+                    <CustomInput
+                      className='mb-3'
+                      lg={12} sm={6} xs={6}
+                      placeholder='Card Number'
+                      type='number'
+                      onchange={(e) => inputHanlder(e, 'card_number')} />
                   </div>
                   <div className='formHeader'>
                     <h5 className='fw-700 Cooper fs-28 pt-1'>
@@ -239,13 +275,18 @@ var discPattern = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
                   <div className='d-flex'>
                     <div className='discInput'>
                       <CustomInput
-                        className='mb-3'
+                        className={`mb-3 ${discError ? '' : ''}`}
                         lg={9} sm={6} xs={6}
                         placeholder='Discount Code'
-                        onchange={(e) => inputHanlder(e, 'discount_code')} />
+                        value={discount}
+                        error={discError}
+                        type= 'number'
+                        onchange={discountChangeHandler} />
+                      {discError && <p className='discError'>{discError}</p>}
                     </div>
+                    {discount === '' ? <button className='discountBtn opacity' onClick={codeHandler} disabled={isDisabled}>Apply</button> :
+                      <button className='discountBtn' onClick={codeHandler}>Apply</button>}
 
-                    <button className='discountBtn opacity'>Apply</button>
                   </div>
                   <div className='cartTable'>
                     <div className='d-flex justify-content-between'>
@@ -269,7 +310,7 @@ var discPattern = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
                     <button
                       className="purchaseButton d-flex "
                       onClick={buttonHandler}
-                      disabled={state.isDisabled}
+                      disabled={isDisabled}
                     >
                       <LockFill className='lockIcon' />
                       <p className='fs-24 fw-bold Quicksand' style={{ paddingLeft: '16px' }}>
@@ -279,7 +320,7 @@ var discPattern = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/;
                     <button
                       className="purchaseButton d-flex disabledButton "
                       onClick={buttonHandler}
-                      disabled={state.isDisabled}
+                      disabled={isDisabled}
                     >
                       <LockFill className='lockIcon' />
                       <p className='fs-24 fw-bold Quicksand' style={{ paddingLeft: '16px' }}>

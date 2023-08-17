@@ -9,7 +9,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <Router>
+    <Router lg= {12} sm={12} xs={12}>
       <Routes>
         <Route exact path='/' element={<Header />} />
         <Route exact path='/signup' element={<SignUpForm />} />

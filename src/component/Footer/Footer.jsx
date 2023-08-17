@@ -19,7 +19,7 @@ function Footer() {
             Blume is in no way affiliated with Judy Blume
             </p>
             </div>
-            <SignUpForm />
+            {/* <SignUpForm /> */}
         </div>
     )
 }

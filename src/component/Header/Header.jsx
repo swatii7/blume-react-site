@@ -9,9 +9,11 @@ import Col from 'react-bootstrap/Col';
 import SignUpForm from './SignUp/SignUpForm';
 
 function Header() {
+
   const targetRef = useRef(null);
 
-  const [isSignedUp, setIsSignedUp] = useState(false)
+  const [modalShow, setModalShow] = useState(false);
+
 
   function handleBundleClick() {
     targetRef.current.scrollIntoView({
@@ -20,9 +22,12 @@ function Header() {
     });
   }
 
-  function signUpHandler(){
-    setIsSignedUp(true);
+  function signupHandler(){
+    console.log('clicked')
+    setModalShow(true)
+
   }
+
 
   return (
     <>
@@ -35,14 +40,17 @@ function Header() {
                    <CustomButton
           label= 'Sign Up'
           className='bunleBtn fw-700 mb-5 Quicksand'
-          onClick={signUpHandler}  />
-          
+          onclick={signupHandler}/>
+
+           <SignUpForm
+           show= {modalShow} 
+           onHide= {()=> setModalShow(false)}/>
         </div>
         </div>
        
         <Container>
           <Row>
-            <Col lg={5} md={12} sm={12} xs={12}> {/* Added xs={12} for extra small screens */}
+            <Col lg={5} md={6} sm={6} xs={6}> 
               <div className='mt-5 contentwrapper'>
                 <h3 className='fs-50 fw-500 contentPara Cooper'>
                   Hopping on the PA system to say: welcome back to school!
@@ -60,7 +68,7 @@ function Header() {
                 />
               </div>
             </Col>
-            <Col lg={7} md={12} sm={12} xs={12}> {/* Added xs={12} for extra small screens */}
+            <Col lg={7} md={12} sm={12} xs={12}>
               <div className='headerImgWrapper'>
                 <img
                   src={headerImg}
@@ -75,7 +83,6 @@ function Header() {
           </Row>
         </Container>
       </div>
-      {isSignedUp === false ? <SignUpForm /> : null}
       <ProductDetails forwardRef={targetRef} />
     </>
   );
