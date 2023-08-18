@@ -1,48 +1,7 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
 
 body{
 color: #162d4a !important;
+width: 100% !important
 }
 .fs-14{
   font-size: 14px !important;
@@ -143,15 +102,18 @@ padding-top: 50px !important;
 }
 
 
+
+
 .navItems{
   justify-content: space-around;
   align-items: baseline
 }
 
-.contentHeading{
+
+/* .contentHeading{
   text-transform: uppercase;
   max-width: 100%;
-}
+} */
 
 .contentwrapper{
   text-align: start;
@@ -176,7 +138,11 @@ width: 576px;
   text-align: start;
 }
 
-.bunleBtn{
+.signUpButton,
+.bunleBtn,.productButton,
+.discountBtn,
+.purchaseButton,
+.createAccountBtn{
   background-color: rgba(22,45,74);
   box-shadow: 8px 6px 0 0 #fff;
   position: relative;
@@ -184,12 +150,18 @@ width: 576px;
   height: 66px;
   border: none;
   width: 256px;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  padding-left: 5rem;
-  padding-right: 5rem;
   text-transform: capitalize;
   margin-bottom: 25px !important;
+  padding: 1.25rem 5rem;
+}
+
+.purchaseButton{
+  height: 94px;
+  margin-left: 12px;
+  width: 491px;
+  margin-top: 35px;
+  text-align: center;
+padding: 30px 80px 11px 75px;
 }
 
 .headerImgWrapper{
@@ -234,17 +206,8 @@ width: 576px;
 }
 
 .productButton{
-  background-color: rgba(22, 45, 74);
-  box-shadow: 8px 6px 0 0 #fff;
-  position: relative;
-  color: #fff;
-  height: 66px;
-  border: none;
-  width: 332px;
-  padding: 1.25rem 5rem; /* Combine padding properties into one */
-  text-transform: capitalize;
-  margin-bottom: 25px !important;
-}
+ width: 332px;
+} 
 
 .reviewContainer{
 padding: 80px;
@@ -365,20 +328,10 @@ background-color: rgba(178,211,226);
 }
 
 .discountBtn{
-  background-color: rgba(22,45,74);
-  box-shadow: 8px 6px 0 0 #fff;
-  position: relative;
-  color: #fff;
   height: 54px;
-  border: none;
-  padding-top: 11px;
-  padding-bottom: 11px;
-  padding-right: 5rem;
-  text-transform: capitalize;
-  margin-bottom: 25px !important;
   margin-left: 20px;
   width: 150px;
-  padding-left: 53px;
+  padding: 11px 20px
 }
 
 .discInput{
@@ -394,6 +347,7 @@ background-color: rgba(178,211,226);
   margin-left: -26px;
   margin-top: 50px;
 }
+
 
 .CardTableContent{
   word-spacing: 0.2rem;
@@ -412,25 +366,7 @@ input.form-control::placeholder{
   opacity: 0.5;
 }
 
-.purchaseButton{
-  background-color: rgba(22,45,74);
-  box-shadow: 8px 6px 0 0 #fff;
-  position: relative;
-  color: #fff;
-  height: 94px;
-  border: none;
-  padding-top: 30px;
-  padding-bottom: 11px;
-  padding-right: 5rem;
-  text-transform: capitalize;
-  margin-bottom: 25px !important;
-  margin-left: 12px;
-  width: 491px;
-  padding-left: 75px;
-  margin-top: 35px;
-  text-align: center;
 
-}
 
 .lockIcon{
   height: 33px !important;
@@ -446,6 +382,7 @@ input.form-control::placeholder{
     margin-left: 50px;
     color: #e9e3e3;
 }
+
 
 .checkoutFooter{
   margin-top: 160px;
@@ -487,13 +424,11 @@ input.form-control::placeholder{
   max-width: 100%; /* Ensure the logo doesn't exceed its container */
   height: auto;
 }
-
-
-@media (min-width: 768px) {
-  /* Medium screens and above */
-  .contentPara {
-    font-size: 30px;
-  }
+.dis-nn.hidden-lg.hidden-ms-hidden-sm.col-lg-7.col-md-12.col-sm-12.col-12 {
+  display: none;
+}
+.disp-nn1.hidden-xs.col-lg-7.col-md-12.col-sm-12.col-12 {
+  display: block;
 }
 
 /* Adjust margins and paddings for smaller screens */
@@ -501,14 +436,6 @@ input.form-control::placeholder{
   padding: 10px;
 }
 
-/* Center the button on small screens */
-@media (max-width: 576px) {
-  /* Small screens */
-  .bunleBtn {
-    display: block;
-    margin: 0 auto;
-  }
-}
 
 /* Adjust image padding for different screen sizes */
 .headerImgWrapper img {
@@ -518,7 +445,7 @@ input.form-control::placeholder{
 
 @media (min-width: 992px) {
   .headerImgWrapper img {
-    padding-top: 108px;
+    padding-top: 0px;
   }
 }
 
@@ -587,22 +514,177 @@ input.form-control::placeholder{
   margin-bottom: 10px;
 }
 
-.createAccountBtn{
-  background-color: rgba(22,45,74);
-  box-shadow: 8px 6px 0 0 #fff;
-  position: relative;
-  color: #fff;
-  height: 66px;
-  border: none;
-  width: 256px;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  text-transform: capitalize;
-  margin-bottom: 25px !important;
-}
+
 
 .textRed{
   color: red
 }
+
+
+
+.headerImgWrapper.hidden-xs.hidden-sm {
+  display: none;
+}
+
+
+  @media(min-width: 768px){
+    .navItems{
+      margin: 33px 5px !important;
+    }
+
+    .headerImgWrapper img {
+      padding-top: 0px !important;
+      max-width: 100% !important;
+    }
+
+    .headerPara {
+      padding-left: 100px;
+      width: 609px;
+      text-align: center;
+      font-size: 24px !important;
+  }
+
+  .headerBtn {
+     text-align: center; 
+}
+
+    .signUpButton{
+      font-size: 24px !important;
+      height: 50% !important;
+      }
+
+      .productContainer{
+        display: flex !important;
+
+      }
+
+      .productImage{
+        height: 250px !important;
+        width: 250px !important;
+      }
+
+      .contentwrapper{
+        text-align: center !important;
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+      }
+
+      .contentPara {
+        font-size: 50px !important;
+    width: 690px !important;
+    font-weight: 300 !important;
+      }
+      .dis-nn.hidden-lg.hidden-ms-hidden-sm.col-lg-7.col-md-12.col-sm-12.col-12 {
+        display: block;
+    }
+    .disp-nn1.hidden-xs.col-lg-7.col-md-12.col-sm-12.col-12 {
+      display: none;
+    }
+    .purchaseButton{
+      width: 379px !important;
+    }
+    
+    .cartTable{
+      width: 404px !important;
+    }
+    
+    .contentHeading {
+      text-align: start;
+      margin-left: 0;
+      width: auto;
+    }
+    
+    .transPara{
+      margin-left: 0px !important;
+    }
+  }
+
+  @media (max-width: 1080px){
+    .headerWrapper {
+        height: auto;
+        padding-bottom: 5rem;
+    }
+    }
+  
+    @media(min-width: 344px) and (max-width:768px){
+     
+      /* Small screens */
+      .bunleBtn {
+        display: block;
+        margin: 0 auto;
+      }
+  
+      .navItems{
+        margin: 33px 5px !important;
+        display: block !important;
+      }
+  
+      .contentHeading{
+        padding-bottom: 41px !important;
+      }
+    
+      .contentwrapper{
+        text-align: center !important;
+        padding-top: 0px !important;
+        margin-top: 0px !important;
+      }
+  
+      .headerPara {
+        padding-left: 47px !important;
+        width: 326px !important;
+        text-align: center !important;
+        font-size: 18px !important;
+    }
+  
+    .bunleBtn{
+      width: 168px !important;
+      padding: 0px;
+    }
+    
+      .contentPara {
+        font-size: 24px !important;
+        width: 306px !important;
+        font-weight: 800 !important;
+        line-height: 38px;
+    }
+  
+    .signUpButton{
+      width: 138px !important;
+      padding: 0px !important;
+      margin-left: 77px !important;
+    }
+
+    .productImage {
+      width: 270px !important;
+      height: 270px;
+      margin-left: 7px !important;
+  }
+
+  .productDetailWrapper {
+    height: auto !important;
+    padding: 80px 0px !important;
+    width: 100% !important;
+}
+
+.productContainer{
+  display: block !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.productButton{
+  width: 256px !important;
+  padding: 0px !important;
+  margin-left: 45px !important;
+}
+  
+  }
+  
+
+
+
+  /* font-size: 32px !important;
+  width: 315px !important;
+  font-weight: 800 !important;
+  line-height: 42px;
+} */
