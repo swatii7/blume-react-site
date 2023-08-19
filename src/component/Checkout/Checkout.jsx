@@ -72,7 +72,7 @@ function Checkout({ forwardRef }) {
   function discountChangeHandler(e) {
     const discInput = e.target.value
     setDiscount(discInput)
-    if (validateCode ) {
+    if (validateCode) {
       setDiscError('Enter 6 digit code')
     }
     else {
@@ -81,11 +81,11 @@ function Checkout({ forwardRef }) {
   }
 
   function codeHandler() {
-    
-    if(discount.length === 6){
+
+    if (discount.length === 6) {
       setDiscError('')
       setDiscount('')
-      enqueueSnackbar('Coupeon applied successfully', {variant: 'success'})
+      enqueueSnackbar('Coupeon applied successfully', { variant: 'success' })
     }
   }
 
@@ -130,182 +130,216 @@ function Checkout({ forwardRef }) {
   return (
     <SnackbarProvider>
       <div ref={forwardRef} className='checkoutContainer'>
-        <Container>
-          <Row>
-            <Col></Col>
-            <Col xs={5}>
-              <div className='checkoutWrapper'>
-                <h2 className='checkoutHeading Cooper fs-50' >Secured Checkout</h2>
-                <p className='Quicksand fs-18 fw-500'>Get your Back to School Bundle now!</p>
-              </div>
-              <div className='formHeader'>
-                <h5 className='fw-700 Cooper fs-28 pt-1'>
+        <div className='col-md-3'></div>
+        <div className='col-md-6 mx-auto'>
+
+          <div className='form mx-auto'>
+            <div className='checkoutWrapper sm-px'>
+              <h2 className='checkoutHeading Cooper fs-50' >Secured Checkout</h2>
+              <p className='Quicksand fs-18 fw-500 sm-px'>Get your Back to School Bundle now!</p>
+            </div>
+
+            <div className='formWrapper'>
+              <div className='formHeader sm-px '>
+                <h5 className='fw-700 Cooper fs-28 pt-1 sm-fs-18'>
                   Customer:
                 </h5>
-                <p className='Cooper fs-28 px-2'>
+                <p className='Cooper fs-28 px-1 sm-fs-18'>
                   Who are we sending this to?
                 </p>
               </div>
+            </div>
+            <Container>
+              <Row>
+                <Col>
+                  <CustomInput
+                    className='mb-3'
+                    lg={6} sm={6} xs={6}
+                    type='text'
+                    placeholder='First Name'
+                    value={state.first_name}
+                    onchange={(e) => inputHanlder(e, 'first_name')} />
+                </Col>
+                <Col>
+                  <CustomInput
+                    className='mb-3'
+                    lg={6} sm={6} xs={6}
+                    placeholder='Last Name'
+                    value={state.last_name}
+                    type='text'
+                    onchange={(e) => inputHanlder(e, 'last_name')} />
+                </Col>
+              </Row>
+              <Row>
 
-              <div className='formWrapper'>
-                <Container>
-                  <Row>
-                    <Col>
-                      <CustomInput
-                        className='mb-3'
-                        lg={6} sm={6} xs={6}
-                        type='text'
-                        placeholder='First Name'
-                        value={state.first_name}
-                        onchange={(e) => inputHanlder(e, 'first_name')} />
-                    </Col>
-                    <Col>
-                      <CustomInput
-                        className='mb-3'
-                        lg={6} sm={6} xs={6}
-                        placeholder='Last Name'
-                        value={state.last_name}
-                        type='text'
-                        onchange={(e) => inputHanlder(e, 'last_name')} />
-                    </Col>
-                  </Row>
+                <CustomInput
+                  lg={12} sm={6} xs={6}
+                  className={`mb-3 ${emailError ? 'emailValidate' : ''}`}
+                  placeholder='Email Address'
+                  type='text'
+                  error={emailError}
+                  value={email}
+                  onchange={handleEmailChange} />
+                {emailError && <p className='emailError'>{emailError}</p>}
+                <CustomInput
+                  className='mb-3'
+                  lg={12} sm={6} xs={6}
+                  placeholder='Phone Number(Optional)'
+                  type='number'
+                  onchange={(e) => inputHanlder(e, 'mobile_number')} />
+              </Row>
+              <div className='d-flex mb-40'>
+                <input type='checkbox' style={{ width: '17px', transform: 'scale(1.2)' }} value={state.checked} checked={true} onChange={checkboxHandler} />
+                <p className='px-3 pt-3'>Keep me up to date on news and exclusive offers</p>
+              </div>
+              <div className='formHeader sm-px'>
+                <h5 className='fw-700 Cooper fs-28 pt-1 sm-fs-18'>
+                  Shipping:
+                </h5>
+                <p className='Cooper fs-28 px-1 sm-fs-18'>
+                  Where are we sending this to?
+                </p>
+              </div>
+              <CustomInput
+                className='mb-3'
+                lg={12} sm={6} xs={6}
+                placeholder='Shipping Address'
+                type='text'
+                value={state.shipping_address}
+                onchange={(e) => inputHanlder(e, 'shipping_address')} />
+              <CustomInput
+                className='mb-3'
+                lg={12} sm={6} xs={6}
+                placeholder='Apartment, Suite, etc.(Optional)'
+                type='text'
+                value={state.apartment}
+                onchange={(e) => inputHanlder(e, 'apartment')} />
 
-                  <CustomInput
-                    lg={12} sm={6} xs={6}
-                    className={`mb-3 ${emailError ? 'emailValidate' : ''}`}
-                    placeholder='Email Address'
-                    type='text'
-                    error={emailError}
-                    value={email}
-                    onchange={handleEmailChange} />
-                  {emailError && <p className='emailError'>{emailError}</p>}
+              <div className="row row-cols-2">
+                <div className="col">
                   <CustomInput
                     className='mb-3'
-                    lg={12} sm={6} xs={6}
-                    placeholder='Phone Number(Optional)'
-                    type='number'
-                    onchange={(e) => inputHanlder(e, 'mobile_number')} />
-                  <div className='d-flex mb-40'>
-                    <input type='checkbox' style={{ width: '17px', transform: 'scale(1.2)' }} value={state.checked} checked={true} onChange={checkboxHandler} />
-                    <p className='px-3 pt-3'>Keep me up to date on news and exclusive offers</p>
-                  </div>
-                  <div className='formHeader'>
-                    <h5 className='fw-700 Cooper fs-28 pt-1'>
-                      Shipping:
-                    </h5>
-                    <p className='Cooper fs-28 px-1'>
-                      Where are we sending this to?
-                    </p>
-                  </div>
-                  <CustomInput
-                    className='mb-3'
-                    lg={12} sm={6} xs={6}
-                    placeholder='Shipping Address'
+
+                    placeholder='Town/City'
                     type='text'
-                    value={state.shipping_address}
-                    onchange={(e) => inputHanlder(e, 'shipping_address')} />
-                  <CustomInput
-                    className='mb-3'
-                    lg={12} sm={6} xs={6}
-                    placeholder='Apartment, Suite, etc.(Optional)'
-                    type='text'
-                    value={state.apartment}
-                    onchange={(e) => inputHanlder(e, 'apartment')} />
-                  <div className='d-flex' style={{ justifyContent: "space-between" }}>
-                    <CustomInput
-                      className='mb-3'
-                      lg={6} sm={6} xs={6}
-                      placeholder='Town/City'
-                      type='text'
-                      value={state.city_name}
-                      onchange={(e) => inputHanlder(e, 'city_name')} />
+                    value={state.city_name}
+                    onchange={(e) => inputHanlder(e, 'city_name')} />
+                </div>
+                <div className="col ">
+                  <Col lg={6} sm={6} md={6}>
                     <RegionDropdown
+
                       country={country}
                       name='none'
                       value={region}
                       onChange={(val) => selectRegion(val)}
-                      className='regionDropdown'
-                    />
+                      className='regionDropdown sm-inputField'
 
-                  </div>
-                  <div className='d-flex' style={{ justifyContent: "space-between" }}>
-                    <CustomInput
-                      className='mb-3' l
-                      g={6} sm={6} xs={6}
-                      placeholder='Post/Zip Code'
-                      type='text'
-                      value={state.zip_code}
-                      onchange={(e) => inputHanlder(e, 'zip_code')} />
-                    <CountryDropdown
-                      value={country}
-                      onChange={(val) => selectCountry(val)}
-                      className='countryDropdown'
                     />
+                    </Col>
 
-                  </div>
-                  <div className='d-flex' style={{ justifyContent: 'space-between' }}>
-                    <div className='formHeader'>
-                      <h5 className='fw-700 Cooper fs-28 pt-1'>
-                        Payment
-                      </h5>
-                      <p className='Cooper fs-28 px-2'>
-                        details
-                      </p>
-                    </div>
-                    <div>
-                      <img src={poweredImg} className='checkoutPatch' />
-                    </div>
-                  </div>
-                  <div className='mb-10'>
-                    <CustomInput
-                      className='mb-3'
-                      lg={12} sm={6} xs={6}
-                      placeholder='Card Number'
-                      type='number'
-                      onchange={(e) => inputHanlder(e, 'card_number')} />
-                  </div>
-                  <div className='formHeader'>
-                    <h5 className='fw-700 Cooper fs-28 pt-1'>
-                      Discount
+                </div>
+                <div className="col">
+                  <CustomInput
+                    className='mb-3' l
+                    g={6} sm={6} xs={6}
+                    placeholder='Post/Zip Code'
+                    type='text'
+                    value={state.zip_code}
+                    onchange={(e) => inputHanlder(e, 'zip_code')} />
+                </div>
+                <div className="col">
+                <Col lg={6} sm={6} md={6}>
+                  <CountryDropdown
+                    value={country}
+                    onChange={(val) => selectCountry(val)}
+                    className='countryDropdown sm-inputField'
+                  />
+                  </Col>
+                </div>
+              </div>
+
+              <div class="row">
+    <div class="col formHeader sm-px">
+                    <h5 className='fw-700 Cooper fs-28 pt-1 sm-fs-18'>
+                      Payment
                     </h5>
-                    <p className='Cooper fs-28 px-2'>
-                      code
+                    <p className='Cooper fs-28 px-2 sm-fs-18'>
+                      details
                     </p>
+    </div>
+    <div class="col">
+    <img src={poweredImg} className='checkoutPatch' />
+    </div>
+  </div>
+
+              <Row>
+                <Col lg={9}>
+                  
+                </Col>
+                <Col lg={3}>
+                  <div>
+                   
                   </div>
-                  <div className='d-flex'>
-                    <div className='discInput'>
-                      <CustomInput
-                        className={`mb-3 ${discError ? '' : ''}`}
-                        lg={9} sm={6} xs={6}
-                        placeholder='Discount Code'
-                        value={discount}
-                        error={discError}
-                        type= 'number'
-                        onchange={discountChangeHandler} />
-                      {discError && <p className='discError'>{discError}</p>}
-                    </div>
-                    {discount === '' ? <button className='discountBtn opacity' onClick={codeHandler} disabled={isDisabled}>Apply</button> :
-                      <button className='discountBtn' onClick={codeHandler}>Apply</button>}
+                </Col>
+              </Row>
+              <div className='mb-10'>
+                <CustomInput
+                  className='mb-3'
+                  lg={12} sm={6} xs={6}
+                  placeholder='Card Number'
+                  type='number'
+                  onchange={(e) => inputHanlder(e, 'card_number')} />
+              </div>
+              <div className='formHeader sm-px'>
+                <h5 className='fw-700 Cooper fs-28 pt-1 sm-fs-18'>
+                  Discount
+                </h5>
+                <p className='Cooper fs-28 px-2 sm-fs-18'>
+                  code
+                </p>
+              </div>
+              <Row>
+                <Col lg={10} sm={6} md={9}>
+                <div className='discInput'>
+                  <CustomInput
+                    className={`mb-3 ${discError ? '' : ''}`}
+                    lg={9} sm={6} xs={6}
+                    placeholder='Discount Code'
+                    value={discount}
+                    error={discError}
+                    type='number'
+                    onchange={discountChangeHandler} />
+                  {discError && <p className='discError'>{discError}</p>}
+                </div>
+                </Col>
+                <Col lg={2} sm={6} md={3}>
+                {discount === '' ? <button className='discountBtn opacity' onClick={codeHandler} disabled={isDisabled}>Apply</button> :
+                  <button className='discountBtn' onClick={codeHandler}>Apply</button>}
+                </Col>
+              </Row>
+              <Row>
+                <Col className='cartTable sm-mx'>
+                  <div className='d-flex justify-content-between'>
+                    <p className='CardTableContent'>Back to School Bundle</p>
+                    <p>$44.00</p>
 
                   </div>
-                  <div className='cartTable'>
-                    <div className='d-flex justify-content-between'>
-                      <p className='CardTableContent'>Back to School Bundle</p>
-                      <p>$44.00</p>
+                  <hr style={{ marginTop: '0px' }}></hr>
+                  <div className='d-flex justify-content-between'>
+                    <p className='CardTableContent opacity'>Shipping</p>
+                    <p className='opacity'>Free!</p>
 
-                    </div>
-                    <hr style={{ marginTop: '0px' }}></hr>
-                    <div className='d-flex justify-content-between'>
-                      <p className='CardTableContent opacity'>Shipping</p>
-                      <p className='opacity'>Free!</p>
-
-                    </div>
-                    <div className='d-flex justify-content-between'>
-                      <p className='CardTableContent'>Total</p>
-                      <p>$44.00</p>
-                    </div>
                   </div>
-                  {/* {console.log(state.isDisabled)} */}
+                  <div className='d-flex justify-content-between'>
+                    <p className='CardTableContent'>Total</p>
+                    <p>$44.00</p>
+                  </div>
+                </Col>
+              </Row>
+              {/* {console.log(state.isDisabled)} */}
+              <Row>
+                <Col>
                   {state.first_name !== '' && state.last_name !== '' && state.email_address !== '' ?
                     <button
                       className="purchaseButton d-flex "
@@ -313,34 +347,34 @@ function Checkout({ forwardRef }) {
                       disabled={isDisabled}
                     >
                       <LockFill className='lockIcon' />
-                      <p className='fs-24 fw-bold Quicksand' style={{ paddingLeft: '16px' }}>
+                      <p className='fs-24 fw-bold Quicksand sm-fs-18' style={{ paddingLeft: '16px' }}>
                         Complete Purchase
                       </p>
                     </button> :
                     <button
-                      className="purchaseButton d-flex disabledButton "
+                      className="purchaseButton d-flex disabledButton"
                       onClick={buttonHandler}
                       disabled={isDisabled}
                     >
                       <LockFill className='lockIcon' />
-                      <p className='fs-24 fw-bold Quicksand' style={{ paddingLeft: '16px' }}>
+                      <p className='fs-24 fw-bold Quicksand  sm-fs-18' style={{ paddingLeft: '16px' }}>
                         Complete Purchase
                       </p>
                     </button>
                   }
+                </Col>
+              </Row>
 
-                  <div className='fs-18 transPara Quicksand'>
-                    <p>All transactions are safe & secured by 2048 bit SSL encryption.</p>
-                  </div>
-                </Container>
+              <div className='fs-18 transPara Quicksand'>
+                <p>All transactions are safe & secured by 2048 bit SSL encryption.</p>
               </div>
-            </Col>
-            <Col>
+            </Container>
 
-            </Col>
-          </Row>
-        </Container>
-        <CheckoutFooter />
+
+          </div>
+        </div>
+      
+      <CheckoutFooter className='' />
       </div>
     </SnackbarProvider>
   )

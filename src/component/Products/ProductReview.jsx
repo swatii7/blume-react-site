@@ -28,7 +28,7 @@ function ProductReview() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     function handlePrev(){
-        
+        console.log('prev clicked')
         if(currentIndex > 0) {
             setCurrentIndex(currentIndex-1);
         }else{
@@ -37,6 +37,7 @@ function ProductReview() {
     }
 
     function handleNext(){
+        console.log('next clicked')
         const courselItems = items.length;
         if(currentIndex+1 < courselItems) {
             setCurrentIndex(currentIndex+1);
@@ -48,17 +49,17 @@ function ProductReview() {
     
     return (
         <div className='reviewContainer'>
-        <div className='d-flex reviewWrapper'>
-            <h2 className='fs-50 Cooper'>Not to brag, but people are loving us</h2>
-            <div className='flex-grow-1'></div> {/* Flex grow to push icons to the right */}
-            <div className='fs-40'>
-                <ChevronLeft onClick={handlePrev} /> <ChevronRight onClick={handleNext} />
-            </div>
+        <div className='d-flex reviewWrapper sm-fs-30'>
+          <h2 className='fs-50 Cooper sm-fs-30'>Not to brag, but people are loving us</h2>
+          <div className='fs-40 d-sm-block'> {/* Display on large screens */}
+            <ChevronLeft onClick={handlePrev} className='leftIcon' /> <ChevronRight onClick={handleNext} className='rightIcon' />
+          </div>
         </div>
         <div>
-            <Carousel data={items} currentItem={currentIndex} />
+          <Carousel data={items} currentItem={currentIndex} />
         </div>
-    </div>
+      </div>
+      
     )
 }
 

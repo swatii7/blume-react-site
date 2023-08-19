@@ -1,23 +1,17 @@
 import React, { useState } from 'react'
 import breakerImg from '../../../assets/Carousel/breaker.png'
-
+import {ChevronLeft, ChevronRight} from 'react-bootstrap-icons'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function Carousel({data,currentItem}) {
 
-
-    // console.log(currentItem,'saadsad')
-
-    // console.log(data.length === currentItem +1 ? 'adhaugyuydyaudg'  : 'daadaajhugyfti','_________')
-
-    
+function Carousel({data,currentItem, onClick}) {
     
     return (
         <div>
               <Container style={{maxWidth: '1400px'}}>
-      <Row className='mt-50'>
+      <Row className='mt-50 flex-row flex-column-reverse-sm '>
         <Col>
         <div>
             
@@ -35,9 +29,12 @@ function Carousel({data,currentItem}) {
             </div>
         </Col>
         <Col>
-        <div style={{maxWidth: '100%', height: 'auto'}}>
-        <img src={data[currentItem].imageSrc} className='currentCarouselImage' />
-        </div>
+        <div style={{ maxWidth: '100%', height: 'auto' }} className='fs-40 reviewCarousel'>
+  {/* <ChevronLeft onClick={onClick} className='chevron left d-lg-none'  style={{ zIndex: 1 }}/> */}
+  <img src={data[currentItem].imageSrc} className='currentCarouselImage img-fluid' />
+  {/* <ChevronRight onClick={onClick} className='chevron right d-lg-none' style={{ zIndex: 1 }} /> */}
+</div>
+
         </Col>
         <Col>
         <div style={{maxWidth: '100%', height: 'auto'}}>
@@ -48,6 +45,8 @@ function Carousel({data,currentItem}) {
     </Container>
 
         </div>
+
+        
     )
 }
 

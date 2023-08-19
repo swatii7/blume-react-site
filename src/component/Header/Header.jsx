@@ -48,7 +48,7 @@ function Header() {
         </div>
         </div>
        
-        <Container>
+        {/* <Container>
           <Row>
           <Col lg={7} md={12} sm={12} xs={12} className='dis-nn hidden-lg hidden-ms-hidden-sm'>
               <div className='headerImgWrapper '>
@@ -93,7 +93,43 @@ function Header() {
               </div>
             </Col>
           </Row>
-        </Container>
+        </Container> */}
+
+<Container>
+  <Row className='flex-row flex-column-reverse-sm '>
+    <Col lg={5} md={12} sm={12} xs={12}>
+      <div className='mt-5 contentwrapper'>
+        <h3 className='fs-50 fw-500 contentPara Cooper'>
+          Hopping on the PA system to say: welcome back to school!
+        </h3>
+        <p className='fs-20 fw-500 pt-2 headerPara Quicksand'>
+          Attendence: Cloud9, Stargirl Airhug. Back to school szn looks
+          different this year.
+        </p>
+        <CustomButton
+          label='shop bundle'
+          className='bunleBtn fw-700 mb-5 Quicksand'
+          onclick={handleBundleClick}
+        />
+      </div>
+    </Col>
+    <Col lg={7} md={12} sm={12} xs={12}>
+      <div className='headerImgWrapper'>
+        <img
+          src={headerImg}
+          style={{
+            width: '100%',
+            paddingTop: '108px',
+          }}
+          alt='Header Image'
+        />
+      </div>
+    </Col>
+  </Row>
+</Container>
+
+
+
       </div>
       <ProductDetails forwardRef={targetRef} />
     </>
