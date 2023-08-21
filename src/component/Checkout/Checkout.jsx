@@ -291,7 +291,7 @@ function Checkout({ forwardRef }) {
                   type='number'
                   onchange={(e) => inputHanlder(e, 'card_number')} />
               </div>
-              <div className='formHeader sm-px'>
+              <div className='d-flex sm-px'>
                 <h5 className='fw-700 Cooper fs-28 pt-1 sm-fs-18'>
                   Discount
                 </h5>

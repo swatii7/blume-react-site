@@ -44,10 +44,10 @@ function ProductDetails({forwardRef}) {
       <>
         <div ref={forwardRef} className='productDetailWrapper text-center Cooper'>
             <div className='productDetailHeading'>
-                <h2 className='fs-50 sm-fs-30'>Back to School Bundle</h2>
-                <p className='fs-20 fw-500 sm-fs-18' style={{letterSpacing: '0.05rem', paddingBottom: 0, marginBottom: 0}}>Stargirl, Cloud 9, and Air Hug</p>
-                <p className='fs-20 fw-500 detailPrice'>$56</p>
-                <p className='fs-20 fw-500'>$44</p>
+                <h2 className='fs-50 sm-fs-40'>Back to School Bundle</h2>
+                <p className='fs-20 fw-500 sm-fs-20' style={{letterSpacing: '0.05rem', paddingBottom: 0, marginBottom: 0}}>Stargirl, Cloud 9, and Air Hug</p>
+                <p className='fs-20 fw-500 detailPrice sm-fs-20'>$56</p>
+                <p className='fs-20 fw-500 sm-fs-20'>$44</p>
             </div>
     <Container className='productContainer mx-auto px-auto'>
     <Row>
@@ -57,7 +57,7 @@ function ProductDetails({forwardRef}) {
         <div className='productCard'>
           <img src={product.image} alt={product.name} className='productImage' />
           <div>
-            <h3 className='fs-40 sm-fs-24'>{product.name}</h3>
+            <h3 className='fs-40 sm-fs-30'>{product.name}</h3>
             <p className='fs-20 mx-4 px-5 productdesc Quicksand sm-fs-14' >{product.description}</p>
           </div>
         </div>

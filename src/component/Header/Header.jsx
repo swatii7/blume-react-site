@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SignUpForm from './SignUp/SignUpForm';
+import Navbar from 'react-bootstrap/Navbar';
 
 function Header() {
 
@@ -32,21 +33,40 @@ function Header() {
   return (
     <>
       <div className='headerWrapper text-center bg-lightBlue textCapitalize'>
-        <div className='d-flex navItems'>
-        <div className='contentHeading Oswald'>
-          <img src={logo} alt='logo' className='logo' />
+      <Navbar className="bg-body-tertiary bg-lightBlue">
+  <Container style={{ marginRight: '35px', marginLeft: '35px' }}>
+    <Navbar.Brand>
+      <div className='contentHeading Oswald'>
+        <img src={logo} alt='logo' className='logo' />
+      </div>
+    </Navbar.Brand>
+    <Navbar.Toggle />
+    <Navbar.Collapse className="justify-content-end">
+      <Navbar.Text>
+        <div className="d-md-flex flex-column align-items-md-end">
+          <div className="d-flex justify-content-md-between">
+            <div className="mb-2 mb-md-0">
+              <CustomButton
+                label='Sign Up'
+                className='signUpButton text-light customBtn bg-blue fw-700 Quicksand'
+                onclick={signupHandler} />
+            </div>
+            <div className="mb-2 mb-md-0">
+              <SignUpForm
+                show={modalShow}
+                onHide={() => setModalShow(false)} />
+            </div>
+          </div>
+          <div className="mt-2 mt-md-0">
+            {/* Other content for small screens */}
+          </div>
         </div>
-        <div>
-                   <CustomButton
-          label= 'Sign Up'
-          className='signUpButton text-light customBtn bg-blue  fw-700 mb-5 Quicksand'
-          onclick={signupHandler}/>
+      </Navbar.Text>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
 
-           <SignUpForm
-           show= {modalShow} 
-           onHide= {()=> setModalShow(false)}/>
-        </div>
-        </div>
+
         
 <Container>
   <Row className='flex-row flex-column-reverse-sm '>

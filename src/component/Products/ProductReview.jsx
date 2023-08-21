@@ -49,7 +49,7 @@ function ProductReview() {
     
     return (
         <div className='reviewContainer'>
-        <div className='d-flex reviewWrapper text-center sm-fs-30'>
+        <div className='d-flex reviewWrapper text-center sm-fs-40'>
           <h2 className='fs-50 Cooper sm-fs-30'>Not to brag, but people are loving us</h2>
           <div className='fs-40 d-sm-block'> {/* Display on large screens */}
             <ChevronLeft onClick={handlePrev} className='leftIcon' /> <ChevronRight onClick={handleNext} className='rightIcon' />
