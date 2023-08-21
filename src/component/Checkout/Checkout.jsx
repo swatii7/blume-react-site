@@ -129,7 +129,7 @@ function Checkout({ forwardRef }) {
 
   return (
     <SnackbarProvider>
-      <div ref={forwardRef} className='checkoutContainer'>
+      <div ref={forwardRef} className='checkoutContainer text-light text-center'>
         <div className='col-md-3'></div>
         <div className='col-md-6 mx-auto'>
 
@@ -174,7 +174,7 @@ function Checkout({ forwardRef }) {
 
                 <CustomInput
                   lg={12} sm={6} xs={6}
-                  className={`mb-3 ${emailError ? 'emailValidate' : ''}`}
+                  className={`mb-3 ${emailError ? 'emailValidate fw-700 bg-red text-light' : ''}`}
                   placeholder='Email Address'
                   type='text'
                   error={emailError}
@@ -188,11 +188,11 @@ function Checkout({ forwardRef }) {
                   type='number'
                   onchange={(e) => inputHanlder(e, 'mobile_number')} />
               </Row>
-              <div className='d-flex mb-40'>
+              <div className='d-flex mb-40 checkBoxWrapper'>
                 <input type='checkbox' style={{ width: '17px', transform: 'scale(1.2)' }} value={state.checked} checked={true} onChange={checkboxHandler} />
                 <p className='px-3 pt-3'>Keep me up to date on news and exclusive offers</p>
               </div>
-              <div className='formHeader sm-px'>
+              <div className='formHeader sm-pr'>
                 <h5 className='fw-700 Cooper fs-28 pt-1 sm-fs-18'>
                   Shipping:
                 </h5>
@@ -314,12 +314,12 @@ function Checkout({ forwardRef }) {
                 </div>
                 </Col>
                 <Col lg={2} sm={6} md={3}>
-                {discount === '' ? <button className='discountBtn opacity' onClick={codeHandler} disabled={isDisabled}>Apply</button> :
-                  <button className='discountBtn' onClick={codeHandler}>Apply</button>}
+                {discount === '' ? <button className='discountBtn  text-light customBtn bg-blue opacity' onClick={codeHandler} disabled={isDisabled}>Apply</button> :
+                  <button className='discountBtn text-light customBtn bg-blue' onClick={codeHandler}>Apply</button>}
                 </Col>
               </Row>
               <Row>
-                <Col className='cartTable sm-mx'>
+                <Col className='cartTable bg-blue sm-mx'>
                   <div className='d-flex justify-content-between'>
                     <p className='CardTableContent'>Back to School Bundle</p>
                     <p>$44.00</p>
@@ -342,7 +342,7 @@ function Checkout({ forwardRef }) {
                 <Col>
                   {state.first_name !== '' && state.last_name !== '' && state.email_address !== '' ?
                     <button
-                      className="purchaseButton d-flex "
+                      className="purchaseButton text-light text-center customBtn bg-blue d-flex "
                       onClick={buttonHandler}
                       disabled={isDisabled}
                     >
@@ -352,7 +352,7 @@ function Checkout({ forwardRef }) {
                       </p>
                     </button> :
                     <button
-                      className="purchaseButton d-flex disabledButton"
+                      className="purchaseButton text-light text-center customBtn bg-blue d-flex disabledButton"
                       onClick={buttonHandler}
                       disabled={isDisabled}
                     >
@@ -365,7 +365,7 @@ function Checkout({ forwardRef }) {
                 </Col>
               </Row>
 
-              <div className='fs-18 transPara Quicksand'>
+              <div className='fs-18 transPara Quicksand mt-3 sm-mx'>
                 <p>All transactions are safe & secured by 2048 bit SSL encryption.</p>
               </div>
             </Container>

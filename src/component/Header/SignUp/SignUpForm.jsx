@@ -75,6 +75,7 @@ function SignUpForm(props) {
 
     return (
         <SnackbarProvider>
+            <div className="modalContainer">
         <Modal
             {...props}
             size="lg"
@@ -153,7 +154,7 @@ function SignUpForm(props) {
 
 
                     <button type="submit"
-                        className="createAccountBtn mt-4"
+                        className="createAccountBtn bg-blue text-center text-light customBtn mt-4"
                         disabled={isLoading}>
                                    {isLoading? <Spinner animation="border" role="status" className='mx-4'>
       <span className="visually-hidden" isLoading={state.isLoading}>Loading...</span>
@@ -168,6 +169,7 @@ function SignUpForm(props) {
                 <Button style={{backgroundColor: 'rgba(22,45,74)', border: 'none'}} onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
+        </div>
         </SnackbarProvider>
     )
 

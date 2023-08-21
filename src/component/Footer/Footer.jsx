@@ -4,7 +4,7 @@ import SignUpForm from '../Header/SignUp/SignUpForm'
 
 function Footer() {
     return (
-        <div className='footerContainer'>
+        <div className='footerContainer text-light text-center'>
             <div>
                 <img src= {footerLogo} className='mb-20' />
 
