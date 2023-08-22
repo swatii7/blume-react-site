@@ -555,10 +555,20 @@ input.form-control::placeholder{
         margin: 0 auto !important;
       }
 
-      .navbar-expand {
+      /* .navbar-expand {
         flex-wrap: nowrap;
+    } */
+
+    .navContainer{
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      display: block !important;
+      /* justify-content: center !important; */
     }
     
+    .navButton{
+      justify-content: center !important;
+    }
       .contentHeading {
         padding-bottom: 41px !important;
       }
@@ -584,6 +594,11 @@ input.form-control::placeholder{
         padding-left: 0px !important;
       }
     
+      .caroselPara{
+          padding-right: 0px !important;
+          margin-left: 0px !important;
+      }
+      
       .bunleBtn,
       .signUpButton {
         width: 168px !important;
@@ -638,16 +653,19 @@ input.form-control::placeholder{
     
       .currentCarouselImage,
       .carouselSecondImg {
-        height: 280px !important;
-        width: 290px !important;
+        height: auto !important;
+        width: 100% !important;
         border: 3px solid #162d4a !important;
       }
     
-      .leftIcon,
+      .leftIcon{
+        left: 7px !important;
+        position: absolute !important;
+        top: 280px !important;
+      }
       .rightIcon {
         position: absolute !important;
         top: 280px !important;
-        left: 7px !important;
         right: 7px !important;
       }
     
@@ -702,6 +720,8 @@ input.form-control::placeholder{
     
       .customBtn {
         padding: 1rem 1rem 2rem !important;
+        width: 100% !important;
+    margin-left: 0px !important;
       }
     
       .productDetailWrapper {

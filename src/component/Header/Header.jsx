@@ -34,14 +34,14 @@ function Header() {
     <>
       <div className='headerWrapper text-center bg-lightBlue textCapitalize'>
       <Navbar className="bg-body-tertiary bg-lightBlue">
-  <Container style={{ marginRight: '35px', marginLeft: '35px' }}>
+  <Container style={{ marginRight: '221px'}} className='navContainer'>
     <Navbar.Brand>
       <div className='contentHeading Oswald'>
         <img src={logo} alt='logo' className='logo' />
       </div>
     </Navbar.Brand>
     <Navbar.Toggle />
-    <Navbar.Collapse className="justify-content-end">
+    <Navbar.Collapse className="justify-content-end navButton">
       <Navbar.Text>
         <div className="d-md-flex flex-column align-items-md-end">
           <div className="d-flex justify-content-md-between">

@@ -18,7 +18,7 @@ function CheckoutFooter() {
           </div>
           </Col>
         <Col>
-        <div>formHeader
+        <div>
           <img src={todayShowImg} className='todayCoImg' />
           <h4 className='todayCoPara fw-700 fs-28 Quicksand '>"Blume provides everything a young women needs to embrace, not fear, her changing body."</h4>
           </div>
